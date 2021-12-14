@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var greeting: UILabel!
+    
     var greetingUser: String!
     
     override func viewDidLoad() {
@@ -16,9 +17,6 @@ class LoginViewController: UIViewController {
     greeting.text = greetingUser
     
     }
-
-
-    
     
     @IBAction func logOut() {
         dismiss(animated: true)

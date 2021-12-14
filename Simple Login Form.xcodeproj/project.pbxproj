@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		57846F012768B01300139837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57846F002768B01300139837 /* AppDelegate.swift */; };
 		57846F032768B01300139837 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57846F022768B01300139837 /* SceneDelegate.swift */; };
-		57846F052768B01300139837 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57846F042768B01300139837 /* ViewController.swift */; };
+		57846F052768B01300139837 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57846F042768B01300139837 /* MainViewController.swift */; };
 		57846F082768B01300139837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57846F062768B01300139837 /* Main.storyboard */; };
 		57846F0A2768B01500139837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57846F092768B01500139837 /* Assets.xcassets */; };
 		57846F0D2768B01500139837 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57846F0B2768B01500139837 /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		57846EFD2768B01300139837 /* Simple Login Form.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Login Form.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57846F002768B01300139837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57846F022768B01300139837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57846F042768B01300139837 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57846F042768B01300139837 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57846F072768B01300139837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57846F092768B01500139837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57846F0C2768B01500139837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			children = (
 				57846F002768B01300139837 /* AppDelegate.swift */,
 				57846F022768B01300139837 /* SceneDelegate.swift */,
-				57846F042768B01300139837 /* ViewController.swift */,
+				57846F042768B01300139837 /* MainViewController.swift */,
 				57846F062768B01300139837 /* Main.storyboard */,
 				57846F142768B15F00139837 /* GradientView.swift */,
 				57846F182768BDA900139837 /* LoginViewController.swift */,
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57846F052768B01300139837 /* ViewController.swift in Sources */,
+				57846F052768B01300139837 /* MainViewController.swift in Sources */,
 				57846F012768B01300139837 /* AppDelegate.swift in Sources */,
 				57846F152768B15F00139837 /* GradientView.swift in Sources */,
 				57846F192768BDA900139837 /* LoginViewController.swift in Sources */,

@@ -7,42 +7,47 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MainViewController: UIViewController {
+// MARK: - IB Outlets
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    
-    @IBOutlet weak var loginButton: UIButton!
-    
+
     @IBOutlet weak var userForgotButton: UIButton!
     @IBOutlet weak var passwordForgotButton: UIButton!
-    let userName = "Peter"
-    let password = "Parker"
-    
-    
-    
+// MARK: - Private Properties
+    private let userName = "Peter"
+    private let password = "Parker"
+// MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTF.leftViewMode = .always
+        usernameTF.leftView = UIImageView(image: UIImage(systemName: "person.fill"))
+        usernameTF.leftView?.tintColor = .blue
+        
+        passwordTF.leftViewMode = .always
+        passwordTF.leftView = UIImageView(image: UIImage(systemName: "lock.fill"))
+        passwordTF.leftView?.tintColor = .blue
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if authentification(usernameTF, passwordTF) {
             guard let loginVC = segue.destination as? LoginViewController else { return }
-            loginVC.greetingUser = "Welcome, \(usernameTF.text!)"
+            loginVC.greetingUser = "Welcome, \(usernameTF.text!) \u{1F577}"
         } else { showAlert(title: "Authentification failed",
                            message: "Incorrect username or password")}
         }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-    
+// MARK: - IB Actions
     @IBAction func userForgotAction() {
-        showAlert(title: "Attension!",
+        showAlert(title: "Attention!",
                   message: "Your login is \(userName)")
     }
     
     @IBAction func passwordForgotAction() {
-        showAlert(title: "Attension!",
+        showAlert(title: "Attention!",
                   message: "You password is \(password)")
     }
     
@@ -51,10 +56,8 @@ class ViewController: UIViewController {
         passwordTF.text = nil
     }
 }
-
-
 // MARK: - Private Methods
-extension ViewController {
+extension MainViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title,
                                       message: message,
@@ -64,7 +67,8 @@ extension ViewController {
         present(alert, animated: true)
         }
 }
-extension ViewController {
+
+extension MainViewController {
     private func authentification(_ login: UITextField, _ passwd: UITextField) -> Bool {
         guard let login = login.text, let passwd = passwd.text,
                 login == userName, passwd == password else {
