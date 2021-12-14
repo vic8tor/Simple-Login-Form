@@ -26,14 +26,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginAction() {
+      
+        
+        
+        
     }
-    
-    
     
     @IBAction func userForgotAction() {
         showAlert(title: "Attension!", message: "Your login is \(userName)")
     }
+    
+    @IBAction func passwordForgotAction() {
+        showAlert(title: "Attension!", message: "You password is \(password)")
+    }
+    
+//    private func check(inputData: String?) -> Bool {
+//        
+//    
+//    }
+
 }
+
+
 // MARK: - Private Methods
 extension ViewController {
     private func showAlert(title: String, message: String) {

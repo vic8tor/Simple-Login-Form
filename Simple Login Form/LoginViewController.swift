@@ -8,12 +8,17 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var greeting: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
 
-
+    
+    
+    @IBAction func logOut() {
+        dismiss(animated: true)
     }
 
 }

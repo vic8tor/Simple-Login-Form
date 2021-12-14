@@ -72,6 +72,9 @@
                                                 <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot password?"/>
+                                                <connections>
+                                                    <action selector="passwordForgotAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="v4b-dQ-Lsl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -121,7 +124,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W95-pj-taa" customClass="GradientView" customModule="Simple_Login_Form" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDf-7T-qWj">
+                                        <rect key="frame" x="144.5" y="144" width="125" height="39"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="35"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="RDf-7T-qWj" firstAttribute="top" secondItem="W95-pj-taa" secondAttribute="top" constant="144" id="0Vz-2r-Fyt"/>
+                                    <constraint firstItem="RDf-7T-qWj" firstAttribute="centerX" secondItem="W95-pj-taa" secondAttribute="centerX" id="nKc-zA-4kH"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlp-cI-LGB">
                                 <rect key="frame" x="30" y="391" width="354" height="59.5"/>
@@ -133,6 +148,9 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOut" destination="3oM-ne-qZe" eventType="touchUpInside" id="BxL-E2-5iZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y1W-hf-ofN"/>
@@ -141,6 +159,7 @@
                             <constraint firstItem="W95-pj-taa" firstAttribute="leading" secondItem="Y1W-hf-ofN" secondAttribute="leading" id="2lo-PS-nna"/>
                             <constraint firstItem="Y1W-hf-ofN" firstAttribute="trailing" secondItem="vlp-cI-LGB" secondAttribute="trailing" constant="30" id="9RB-Sh-yBY"/>
                             <constraint firstItem="Y1W-hf-ofN" firstAttribute="bottom" secondItem="vlp-cI-LGB" secondAttribute="bottom" constant="357.5" id="CCU-SE-9oG"/>
+                            <constraint firstItem="vlp-cI-LGB" firstAttribute="leading" secondItem="RDf-7T-qWj" secondAttribute="trailing" constant="-239.5" id="Xqu-qy-gIj"/>
                             <constraint firstItem="vlp-cI-LGB" firstAttribute="leading" secondItem="Y1W-hf-ofN" secondAttribute="leading" constant="30" id="iEa-wk-lhc"/>
                             <constraint firstAttribute="bottom" secondItem="W95-pj-taa" secondAttribute="bottom" id="mao-jX-VaJ"/>
                             <constraint firstItem="W95-pj-taa" firstAttribute="trailing" secondItem="Y1W-hf-ofN" secondAttribute="trailing" id="wLz-nD-B0C"/>
@@ -148,6 +167,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I6k-aN-5eD"/>
+                    <connections>
+                        <outlet property="greeting" destination="RDf-7T-qWj" id="vTe-az-hFp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkN-Kr-Zv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
