@@ -9,9 +9,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var greeting: UILabel!
+    var greetingUser: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    greeting.text = greetingUser
+    
     }
 
 
