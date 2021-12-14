@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var userForgotButton: UIButton!
     @IBOutlet weak var passwordForgotButton: UIButton!
-    let password = "Developer"
-    let userName = "Swift"
+    let userName = "Peter"
+    let password = "Parker"
+    
     
     
     override func viewDidLoad() {
@@ -25,15 +26,14 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if loginValidate(for: usernameTF, passwd: passwordTF) {
+        if authentification(usernameTF, passwordTF) {
             guard let loginVC = segue.destination as? LoginViewController else { return }
-            loginVC.greetingUser = "Welcome, \(userName)"
+            loginVC.greetingUser = "Welcome, \(usernameTF.text!)"
         } else { showAlert(title: "Authentification failed",
                            message: "Incorrect username or password")}
         }
- 
-    @IBAction func loginAction() {
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     @IBAction func userForgotAction() {
@@ -46,9 +46,10 @@ class ViewController: UIViewController {
                   message: "You password is \(password)")
     }
     
-    @IBAction func emptyCheck() {
-
-}
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        usernameTF.text = nil
+        passwordTF.text = nil
+    }
 }
 
 
@@ -63,9 +64,8 @@ extension ViewController {
         present(alert, animated: true)
         }
 }
-
 extension ViewController {
-    private func loginValidate(for login: UITextField, passwd: UITextField) -> Bool {
+    private func authentification(_ login: UITextField, _ passwd: UITextField) -> Bool {
         guard let login = login.text, let passwd = passwd.text,
                 login == userName, passwd == password else {
             return false
