@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="If5-KW-8Of">
-                                        <rect key="frame" x="30" y="350" width="354" height="93"/>
+                                        <rect key="frame" x="30" y="339.5" width="354" height="93"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vdl-IL-SF0">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
@@ -38,7 +38,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8n-0Z-6pH">
-                                        <rect key="frame" x="30" y="515" width="354" height="59.5"/>
+                                        <rect key="frame" x="30" y="504.5" width="354" height="59.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Log In" cornerStyle="large">
@@ -48,24 +48,31 @@
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="loginAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="iBZ-Ja-YKH"/>
                                             <segue destination="3oM-ne-qZe" kind="presentation" id="OO5-3O-rtf"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-tR-KAN">
-                                        <rect key="frame" x="30" y="607" width="354" height="20"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-tR-KAN">
+                                        <rect key="frame" x="30" y="596.5" width="354" height="30.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Forgot User Name?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vmm-bg-AzB">
-                                                <rect key="frame" x="0.0" y="0.0" width="150.5" height="20"/>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1AD-3n-rwI">
-                                                <rect key="frame" x="203.5" y="0.0" width="150.5" height="20"/>
-                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtN-dL-6ks">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30.5"/>
+                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?">
+                                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="userForgotAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="Itm-FO-QZI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lv1-vC-q9q">
+                                                <rect key="frame" x="194" y="0.0" width="160" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Forgot password?"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -92,6 +99,13 @@
                             <constraint firstItem="KLf-e2-0bO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eD8-aN-iLc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="R8n-0Z-6pH" id="mSA-zY-g6h"/>
+                        <outlet property="passwordForgotButton" destination="Lv1-vC-q9q" id="WJt-Yl-gHD"/>
+                        <outlet property="passwordTF" destination="0OM-Pc-g0R" id="kB2-oY-hlj"/>
+                        <outlet property="userForgotButton" destination="AtN-dL-6ks" id="rRx-qF-Xv8"/>
+                        <outlet property="usernameTF" destination="vdl-IL-SF0" id="1OJ-ym-0Ff"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,6 +155,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
