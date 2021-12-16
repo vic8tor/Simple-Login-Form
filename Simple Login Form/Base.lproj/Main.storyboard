@@ -45,7 +45,8 @@
                                     <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="3oM-ne-qZe" kind="presentation" id="OO5-3O-rtf"/>
+                                    <action selector="logInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BC-4p-qy3"/>
+                                    <segue destination="3oM-ne-qZe" kind="presentation" identifier="welcomeSegue" id="OO5-3O-rtf"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-tR-KAN">

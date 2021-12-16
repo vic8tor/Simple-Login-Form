@@ -37,14 +37,21 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if authentification(usernameTF, passwordTF) {
-            guard let loginVC = segue.destination as? LoginViewController else { return }
-            loginVC.greetingUser = "Welcome, \(usernameTF.text!) \u{1F577}"
-        } else { showAlert(title: "Authentification failed",
-                           message: "Incorrect username or password")}
+        guard let loginVC = segue.destination as? LoginViewController else { return }
+        loginVC.greetingUser = "Welcome, \(usernameTF.text!) \u{1F577}"
         }
 
     // MARK: - IB Actions
+    @IBAction func logInAction(_ sender: UIButton) {
+        if authentification(usernameTF, passwordTF) {
+            performSegue(withIdentifier: "welcomeSegue", sender: sender)
+        } else {
+        showAlert(title: "Authentification failed",
+                               message: "Incorrect username or password")
+            return
+        }
+    
+    }
     @IBAction func userForgotAction() {
         showAlert(title: "Attention!",
                   message: "Your login is \(userName)")
