@@ -72,7 +72,8 @@ class ProfileViewController: UIViewController {
 //        guard let hideAboutSegment = workHiddenSegmentCotrol else { return }
 //        segmentControl.setEnabled(hideAboutSegment, forSegmentAt: 1)
     }
-
+    
+    // MARK: - IB Actions
     @IBAction func changeSegmentControlActions() {
         switch segmentControl.selectedSegmentIndex {
         case 0:
