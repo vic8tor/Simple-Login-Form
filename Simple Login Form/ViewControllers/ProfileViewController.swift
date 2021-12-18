@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var educationStackView: UIStackView!
     @IBOutlet weak var experienceStackView: UIStackView!
+    @IBOutlet weak var portfolioStackView: UIStackView!
     
     @IBOutlet weak var yearsExperienceLabel: UILabel!
     @IBOutlet weak var companyExperienceLabel: UILabel!
@@ -61,20 +62,24 @@ class ProfileViewController: UIViewController {
         
         experienceStackView.isHidden = true
         educationStackView.isHidden = false
+        portfolioStackView.isHidden = true
         
     }
 
     @IBAction func changeSegmentControlActions(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            experienceStackView.isHidden = true
             educationStackView.isHidden = false
-        case 1:
-            experienceStackView.isHidden = false
-            educationStackView.isHidden = true
-        default:
             experienceStackView.isHidden = true
+            portfolioStackView.isHidden = true
+        case 1:
             educationStackView.isHidden = true
+            experienceStackView.isHidden = false
+            portfolioStackView.isHidden = true
+        default:
+            educationStackView.isHidden = true
+            experienceStackView.isHidden = true
+            portfolioStackView.isHidden = false
         }
         
     }
