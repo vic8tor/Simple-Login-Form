@@ -12,7 +12,8 @@ struct Person {
     var fullname: String {
         firstname + " " + lastname
     }
-    let university: String
+    let city: String
+    let education: Company
     let experience: Company
     let position: Position
     
@@ -21,13 +22,18 @@ struct Person {
             Credential(login: "Victor", password: "qwerty"),
                  firstname: "Victor",
                  lastname: "Savko",
-                 university: "RSREU",
+                 city: "Moscow",
+                 education: Company(
+                        name: "RSREU",
+                        position: .networkEngineer,
+                        city: "Ryazan",
+                        yearsExperience: "2010 - 2015"),
                  experience: Company(
-                    title: "State company",
+                    name: "State company",
                     position: .secEngineer,
                     city: "Moscow",
-                    workExperience: "2016 - Present"),
-                position: .networkEngineer)
+                    yearsExperience: "2016 - Present"),
+                 position: .developer)
         ]
     }
 }
@@ -37,10 +43,10 @@ struct Credential {
     let password: String
     }
 struct Company {
-    let title: String
+    let name: String
     let position: Position
     let city: String
-    let workExperience: String
+    let yearsExperience: String
 }
 
 enum Position: String {

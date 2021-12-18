@@ -38,8 +38,24 @@ class LoginViewController: UIViewController {
         let tabBarController = segue.destination as! UITabBarController
         guard let viewControllers = tabBarController.viewControllers else { return }
         for viewController in viewControllers {
-            guard let loginVC = viewController as? WelcomeViewController else { return }
-            loginVC.greetingUser = "\(person[0].fullname)"
+            if let loginVC = viewController as? WelcomeViewController {
+                loginVC.greetingUser = person[0].fullname
+            } else if let navigationVC = viewController as? UINavigationController {
+                let profileVC = navigationVC.topViewController as! ProfileViewController
+                profileVC.fullname = person[0].fullname
+                profileVC.cityInHead = person[0].city
+                profileVC.professionInHead = person[0].position.rawValue
+                profileVC.yearsEducation = person[0].education.yearsExperience
+                profileVC.universityEducation = person[0].education.name
+                profileVC.cityEducation = person[0].education.city
+                profileVC.positionEducation = person[0].education.position.rawValue
+                
+                profileVC.yearsExperience = person[0].experience.yearsExperience
+                profileVC.companyExperience = person[0].experience.name
+                profileVC.cityExperience = person[0].experience.city
+                profileVC.positionExperience = person[0].experience.position.rawValue
+            }
+            
         }
     }
 

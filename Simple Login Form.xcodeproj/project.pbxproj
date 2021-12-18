@@ -58,10 +58,10 @@
 		570464D1276CB5F700F58747 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				570464D6276CC68A00F58747 /* ProfileSettingsViewController.swift */,
-				570464D4276CC63C00F58747 /* ProfileViewController.swift */,
 				57846F042768B01300139837 /* LoginViewController.swift */,
 				57846F182768BDA900139837 /* WelcomeViewController.swift */,
+				570464D4276CC63C00F58747 /* ProfileViewController.swift */,
+				570464D6276CC68A00F58747 /* ProfileSettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
