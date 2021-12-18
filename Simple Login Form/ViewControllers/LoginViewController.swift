@@ -45,10 +45,11 @@ class LoginViewController: UIViewController {
                 profileVC.fullname = person[0].fullname
                 profileVC.cityInHead = person[0].city
                 profileVC.professionInHead = person[0].position.rawValue
-                profileVC.yearsEducation = person[0].education.yearsExperience
-                profileVC.universityEducation = person[0].education.name
-                profileVC.cityEducation = person[0].education.city
-                profileVC.positionEducation = person[0].education.position.rawValue
+                
+                profileVC.yearsEducation = person[0].firstEducation.yearsExperience
+                profileVC.universityEducation = person[0].firstEducation.name
+                profileVC.cityEducation = person[0].firstEducation.city
+                profileVC.positionEducation = person[0].firstEducation.position.rawValue
                 
                 profileVC.yearsExperience = person[0].experience.yearsExperience
                 profileVC.companyExperience = person[0].experience.name
@@ -111,6 +112,7 @@ extension LoginViewController {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             UIColor.systemRed.cgColor,
+            UIColor.systemPurple.cgColor,
             UIColor.systemBlue.cgColor
         ]
         view.layer.insertSublayer(gradientLayer, at: 0)

@@ -9,9 +9,11 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
     @IBOutlet weak var fullnameLabel: UILabel!
-    @IBOutlet weak var professionInHeaderLabel: UILabel!
-    @IBOutlet weak var cityInHeaderLabel: UILabel!
+    @IBOutlet weak var carerObjectiveLabel: UILabel!
+    @IBOutlet weak var cityOfResidenceLabel: UILabel!
     
     @IBOutlet weak var yearsEducationLabel: UILabel!
     @IBOutlet weak var universityEducationLabel: UILabel!
@@ -41,15 +43,18 @@ class ProfileViewController: UIViewController {
     var companyExperience: String!
     var cityExperience: String!
     var positionExperience: String!
-
+    
+//    var workHiddenSegmentCotrol: Bool!
+//    var educationHiddenSegmentCotrol: Bool!
+//    var portfolioHiddenSegmentCotrol: Bool!
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        grafient()
+        gradient()
         
         fullnameLabel.text = fullname ?? ""
-        cityInHeaderLabel.text = cityInHead ?? ""
-        professionInHeaderLabel.text = professionInHead ?? ""
+        cityOfResidenceLabel.text = cityInHead ?? ""
+        carerObjectiveLabel.text = professionInHead ?? ""
         yearsEducationLabel.text = yearsEducation ?? ""
         universityEducationLabel.text = universityEducation ?? ""
         cityEducationLabel.text = cityEducation ?? ""
@@ -63,11 +68,13 @@ class ProfileViewController: UIViewController {
         experienceStackView.isHidden = true
         educationStackView.isHidden = false
         portfolioStackView.isHidden = true
-        
+
+//        guard let hideAboutSegment = workHiddenSegmentCotrol else { return }
+//        segmentControl.setEnabled(hideAboutSegment, forSegmentAt: 1)
     }
 
-    @IBAction func changeSegmentControlActions(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
+    @IBAction func changeSegmentControlActions() {
+        switch segmentControl.selectedSegmentIndex {
         case 0:
             educationStackView.isHidden = false
             experienceStackView.isHidden = true
@@ -85,9 +92,9 @@ class ProfileViewController: UIViewController {
     }
 }
 
-
+// MARK: - Private Methods
 extension ProfileViewController {
-    private func grafient() -> Void {
+    private func gradient() -> Void {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [

@@ -31,6 +31,7 @@ extension WelcomeViewController {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             UIColor.systemRed.cgColor,
+            UIColor.systemPurple.cgColor,
             UIColor.systemBlue.cgColor
         ]
         view.layer.insertSublayer(gradientLayer, at: 0)

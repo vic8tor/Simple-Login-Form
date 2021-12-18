@@ -13,22 +13,31 @@ struct Person {
         firstname + " " + lastname
     }
     let city: String
-    let education: Company
-    let experience: Company
+    let firstEducation: Organization
+    let secondEducation: Organization
+    let experience: Organization
     let position: Position
     
     static func getPerson() -> [Person] {
-        [ Person(user:
-            Credential(login: "Victor", password: "qwerty"),
+        [
+            Person(
+                user: Credential(
+                    login: "Victor",
+                    password: "1"),
                  firstname: "Victor",
                  lastname: "Savko",
                  city: "Moscow",
-                 education: Company(
-                        name: "RSREU",
-                        position: .networkEngineer,
-                        city: "Ryazan",
-                        yearsExperience: "2010 - 2015"),
-                 experience: Company(
+                 firstEducation: Organization(
+                    name: "RSREU",
+                    position: .networkEngineer,
+                    city: "Ryazan",
+                    yearsExperience: "2010 - 2015"),
+                secondEducation: Organization(
+                    name: "Switbook.ru",
+                    position: .developer,
+                    city: "Moscow",
+                    yearsExperience: "2020 - Present"),
+                 experience: Organization(
                     name: "State company",
                     position: .secEngineer,
                     city: "Moscow",
@@ -42,7 +51,8 @@ struct Credential {
     let login: String
     let password: String
     }
-struct Company {
+
+struct Organization {
     let name: String
     let position: Position
     let city: String
