@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570464D5276CC63D00F58747 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570464D4276CC63C00F58747 /* ProfileViewController.swift */; };
+		570464D7276CC68B00F58747 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570464D6276CC68A00F58747 /* ProfileSettingsViewController.swift */; };
+		570464D9276CC6E300F58747 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570464D8276CC6E300F58747 /* Person.swift */; };
 		57846F012768B01300139837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57846F002768B01300139837 /* AppDelegate.swift */; };
 		57846F032768B01300139837 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57846F022768B01300139837 /* SceneDelegate.swift */; };
 		57846F052768B01300139837 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57846F042768B01300139837 /* LoginViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570464D4276CC63C00F58747 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		570464D6276CC68A00F58747 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
+		570464D8276CC6E300F58747 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		57846EFD2768B01300139837 /* Simple Login Form.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Login Form.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57846F002768B01300139837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57846F022768B01300139837 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +58,8 @@
 		570464D1276CB5F700F58747 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				570464D6276CC68A00F58747 /* ProfileSettingsViewController.swift */,
+				570464D4276CC63C00F58747 /* ProfileViewController.swift */,
 				57846F042768B01300139837 /* LoginViewController.swift */,
 				57846F182768BDA900139837 /* WelcomeViewController.swift */,
 			);
@@ -75,6 +83,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		570464DA276CC6E700F58747 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				570464D8276CC6E300F58747 /* Person.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		57846EF42768B01300139837 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +111,7 @@
 		57846EFF2768B01300139837 /* Simple Login Form */ = {
 			isa = PBXGroup;
 			children = (
+				570464DA276CC6E700F58747 /* Model */,
 				570464D0276CB5DF00F58747 /* SupportFiles */,
 				570464D1276CB5F700F58747 /* ViewControllers */,
 				570464D2276CB61500F58747 /* Storyboards */,
@@ -173,8 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570464D5276CC63D00F58747 /* ProfileViewController.swift in Sources */,
+				570464D7276CC68B00F58747 /* ProfileSettingsViewController.swift in Sources */,
 				57846F052768B01300139837 /* LoginViewController.swift in Sources */,
 				57846F012768B01300139837 /* AppDelegate.swift in Sources */,
+				570464D9276CC6E300F58747 /* Person.swift in Sources */,
 				57846F192768BDA900139837 /* WelcomeViewController.swift in Sources */,
 				57846F032768B01300139837 /* SceneDelegate.swift in Sources */,
 			);

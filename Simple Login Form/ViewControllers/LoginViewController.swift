@@ -16,9 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordForgotButton: UIButton!
 
     // MARK: - Private Properties
-    private let userName = "Peter"
-    private let password = "Parker"
-
+    let person = Person.getPerson()
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +35,13 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let loginVC = segue.destination as? WelcomeViewController else { return }
-        loginVC.greetingUser = "\(usernameTF.text!)"
+        let tabBarController = segue.destination as! UITabBarController
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        for viewController in viewControllers {
+            guard let loginVC = viewController as? WelcomeViewController else { return }
+            loginVC.greetingUser = "\(person[0].fullname)"
         }
+    }
 
     // MARK: - IB Actions
     @IBAction func logInAction(_ sender: UIButton) {
@@ -52,8 +54,8 @@ class LoginViewController: UIViewController {
     }
     @IBAction func userForgotAction(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Attention!", message: "Your login is \(userName)")
-        : showAlert(title: "Attention!", message: "You password is \(password)")
+        ? showAlert(title: "Attention!", message: "Your login is \(person[0].user.login)")
+        : showAlert(title: "Attention!", message: "You password is \(person[0].user.password)")
         
     }
     
@@ -80,7 +82,7 @@ extension LoginViewController {
 extension LoginViewController {
     private func authentification(_ login: UITextField, _ passwd: UITextField) -> Bool {
         guard let login = login.text, let passwd = passwd.text,
-                login == userName, passwd == password else {
+              login == person[0].user.login, passwd == person[0].user.password else {
             return false
         }
     return true
